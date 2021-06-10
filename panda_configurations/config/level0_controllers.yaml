@@ -1,0 +1,30 @@
+level0_hw:
+  remap_source_args:
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/cancel"
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/feedback"
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/goal"
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/result"
+  - "/level0_hw/microinterpolator/follow_joint_trajectory/status"
+  - "/level0_hw/microinterpolator/unscaled_joint_target/joint_states"
+  - "/level0_hw/js_pub/joint_states"
+  remap_target_args:
+  - "/position_joint_trajectory_controller/follow_joint_trajectory/cancel"
+  - "/position_joint_trajectory_controller/follow_joint_trajectory/feedback"
+  - "/position_joint_trajectory_controller/follow_joint_trajectory/goal"
+  - "/position_joint_trajectory_controller/follow_joint_trajectory/result"
+  - "/position_joint_trajectory_controller/follow_joint_trajectory/status"
+  - "/unscaled_joint_target"
+  - "/panda/joint_states"
+
+  js_pub:
+    type: cnr/control/JointStatePublisher
+    controlled_joint: all
+    base_link: panda_link0
+    tool_link: panda_hand
+    robot_description_param: /robot_description
+    robot_description_planning_param: /robot_description_planning
+
+  microinterpolator:
+    type: "cnr/control/ScaledFJTPosController"
+    controlled_joints: all
+    continuity_order: 1
