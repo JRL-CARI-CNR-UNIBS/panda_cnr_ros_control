@@ -20,7 +20,7 @@ level0_hw:
     type: cnr/control/JointStatePublisher
     controlled_joint: all
     base_link: panda_link0
-    tool_link: panda_hand
+    tool_link: panda_link8
     robot_description_param: /robot_description
     robot_description_planning_param: /robot_description_planning
 

@@ -17,9 +17,9 @@ level0_hw:
   - panda_joint6
   - panda_joint7
   base_link: panda_link0
-  tool_link: panda_hand
+  tool_link: panda_link8
   robot_description_param: /robot_description
   robot_description_planning_param: /robot_description_planning
   kin_update_period: 0.002
 
-  initial_position: [0.5, -0.785, 0.0, -2.356, 0.0, 1.571, 1.785]
+  initial_position: [-0.8, 0.3, 0.0, -2.0, 0.0, 2.5, -0.5]

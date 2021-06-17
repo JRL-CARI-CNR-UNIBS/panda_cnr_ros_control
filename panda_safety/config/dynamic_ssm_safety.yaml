@@ -1,5 +1,5 @@
 base_frame: "panda_link0"
-tool_frame: "panda_hand"
+tool_frame: "panda_link8"
 test_links:
 - panda_link0
 - panda_link1
@@ -10,4 +10,3 @@ test_links:
 - panda_link6
 - panda_link7
 - panda_link8
-- panda_hand
