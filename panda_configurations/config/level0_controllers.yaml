@@ -5,7 +5,7 @@ level0_hw:
   - "/level0_hw/microinterpolator/follow_joint_trajectory/goal"
   - "/level0_hw/microinterpolator/follow_joint_trajectory/result"
   - "/level0_hw/microinterpolator/follow_joint_trajectory/status"
-  - "/level0_hw/microinterpolator/unscaled_joint_target/joint_states"
+  - "/level0_hw/microinterpolator/unscaled_joint_target"
   - "/level0_hw/js_pub/joint_states"
   remap_target_args:
   - "/position_joint_trajectory_controller/follow_joint_trajectory/cancel"
