@@ -1,0 +1,44 @@
+group_names_map:
+  mg1: panda_arm
+  mg2: panda_arm
+
+
+mg1:
+  type: Multigoal
+  max_distance: 0.2
+  max_refine_time: 15.0
+  extend: false
+  local_bias: 0.25
+  tube_radius: 0.02
+  use_avoidance: false
+  use_avoidance_goal: false # set true if the human avoidance is done only at the goal. Useful in Multigoal planning. ***CHANGE IT***
+  use_avoidance_path: false # set true if the human avoidance is done during the path. It is slower than use_avoidance_goal. ***CHANGE IT***
+
+  base_frame: world
+  tool_frame: panda_link8
+  min_distance: 0.4
+  max_distance: 0.6
+  max_penalty: 10.0
+  display_bubbles: false
+  links:
+  - panda_link8
+
+mg2:
+  type: Multigoal
+  max_distance: 0.2
+  max_refine_time: 15.0
+  extend: false
+  local_bias: 0.25
+  tube_radius: 0.02
+  use_avoidance: false
+  use_avoidance_goal: false # set true if the human avoidance is done only at the goal. Useful in Multigoal planning. ***CHANGE IT***
+  use_avoidance_path: false # set true if the human avoidance is done during the path. It is slower than use_avoidance_goal. ***CHANGE IT***
+
+  base_frame: world
+  tool_frame: panda_link8
+  min_distance: 0.4
+  max_distance: 0.6
+  max_penalty: 10.0
+  display_bubbles: false
+  links:
+  - panda_link8
