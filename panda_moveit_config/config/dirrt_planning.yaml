@@ -1,7 +1,12 @@
 group_names_map:
-  mg1: panda_arm
-  mg2: panda_arm
+  mg1:                           panda_arm
+  mg2:                           panda_arm
+  timebased:                     panda_arm
+  hamp_timebased:                panda_arm
+  timebased_extend:              panda_arm
+  probabilistic_hamp_time_based: panda_arm
 
+default_planner_config: timebased
 
 mg1:
   type: Multigoal
@@ -42,3 +47,62 @@ mg2:
   display_bubbles: false
   links:
   - panda_link8
+timebased:
+  type: TimeBasedMultigoal
+  max_distance: 0.2
+  max_refine_time: 1500.0
+  extend: false
+  local_bias: 0.0
+  tube_radius: 0.02
+
+
+timebased_extend:
+  type: TimeBasedMultigoal
+  max_distance: 0.2
+  max_refine_time: 1500.0
+  extend: true
+
+hamp_timebased:
+  type: HAMPTimeBasedMultigoal
+  max_distance: 0.2
+  max_refine_time: 1500.0
+  extend: false
+  base_frame: panda_link0
+  tool_frame: panda_link8
+  poses_topic: /poses
+  computation_step: 0.1
+  links:
+  - panda_link0
+  - panda_link1
+  - panda_link2
+  - panda_link3
+  - panda_link4
+  - panda_link5
+  - panda_link6
+  - panda_link7
+  - panda_link8
+  minimum_distance: 0.1
+  reaction_time: 0.2
+
+
+probabilistic_hamp_time_based:
+  type: ProbabilisticHAMPTimeBasedMultiGoalPlanner
+  max_distance: 0.2
+  max_refine_time: 1500.0
+  extend: false
+  base_frame: panda_link0
+  tool_frame: panda_link8
+  occupancy_topic: /occupancy
+  computation_step: 0.1
+  links:
+  - panda_link0
+  - panda_link1
+  - panda_link2
+  - panda_link3
+  - panda_link4
+  - panda_link5
+  - panda_link6
+  - panda_link7
+  - panda_link8
+  minimum_distance: 0.1
+  reaction_time: 0.2

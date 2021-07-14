@@ -10,3 +10,5 @@ test_links:
 - panda_link6
 - panda_link7
 - panda_link8
+minimum_distance: 0.1
+reaction_time: 0.2
