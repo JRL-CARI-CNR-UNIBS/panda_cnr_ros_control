@@ -11,7 +11,7 @@ default_planner_config: timebased
 mg1:
   type: Multigoal
   max_distance: 0.2
-  max_refine_time: 15.0
+  max_refine_time: 1500.0
   extend: false
   local_bias: 0.25
   tube_radius: 0.02
@@ -31,7 +31,7 @@ mg1:
 mg2:
   type: Multigoal
   max_distance: 0.2
-  max_refine_time: 15.0
+  max_refine_time: 1500.0
   extend: false
   local_bias: 0.25
   tube_radius: 0.02
@@ -54,6 +54,7 @@ timebased:
   extend: false
   local_bias: 0.0
   tube_radius: 0.02
+  norm2_weight: 0.01
 
 
 timebased_extend:
@@ -61,6 +62,7 @@ timebased_extend:
   max_distance: 0.2
   max_refine_time: 1500.0
   extend: true
+  norm2_weight: 0.01
 
 hamp_timebased:
   type: HAMPTimeBasedMultigoal
@@ -81,8 +83,9 @@ hamp_timebased:
   - panda_link6
   - panda_link7
   - panda_link8
-  minimum_distance: 0.1
+  minimum_distance: 0.3
   reaction_time: 0.2
+  norm2_weight: 0.01
 
 
 probabilistic_hamp_time_based:
@@ -104,5 +107,6 @@ probabilistic_hamp_time_based:
   - panda_link6
   - panda_link7
   - panda_link8
-  minimum_distance: 0.1
+  minimum_distance: 0.3
   reaction_time: 0.2
+  norm2_weight: 0.01
